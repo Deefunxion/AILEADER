@@ -1,18 +1,27 @@
+Ασφαλώς, ζητώ συγγνώμη για την πρόωρη διακοπή. Ακολουθεί ο **πλήρης και συνεχόμενος κώδικας** χωρίς καμία διακοπή.
+
+---
+
+```html
 <!DOCTYPE html>
 <html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo-Monday Protocol - NeoMerge</title>
+    <title>Neo-Monday Protocol</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
         
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e5e7eb; /* Darker background */
-            color: #1f2937; /* Dark slate text */
+            background-color: #e5e7eb;
+            color: #1f2937;
         }
         
         .gradient-text {
@@ -24,9 +33,9 @@
         
         .article-card {
             transition: all 0.3s ease;
-            border: 1px solid #d1d5db; /* Lighter border */
+            border: 1px solid #d1d5db;
             cursor: pointer;
-            background-color: #f9fafb; /* Off-white card */
+            background-color: #f9fafb;
         }
         
         .article-card:hover {
@@ -122,7 +131,7 @@
             margin: 0;
             overflow: auto;
             white-space: pre-wrap;
-            background: #f3f4f6; /* Light gray for code block */
+            background: #f3f4f6;
             font-family: 'Courier New', monospace;
             font-size: 0.875rem;
             border-left: 2px solid #d1d5db;
@@ -179,6 +188,7 @@
                 <a href="#protocol" class="hover:text-black transition">Protocol</a>
                 <a href="#articles" class="hover:text-black transition">Articles</a>
                 <a href="#philosophy" class="hover:text-black transition">Philosophy</a>
+                <a href="#download" class="hover:text-black transition">Download</a>
                 <a href="#about" class="hover:text-black transition">About</a>
             </div>
             <button class="md:hidden text-gray-600 hover:text-black">
@@ -248,56 +258,22 @@
                 <div class="mb-8">
                     <h3 class="text-2xl font-bold mb-4 text-gray-800">Τι είναι το Neo-Monday;</h3>
                     <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        Το Neo-Monday ��εν είναι ένα ακόμα custom GPT. Είναι ένα λιτό, αλλά αυστηρό, πλαίσιο επικοινωνίας (communication framework) που επιβάλλεται πάνω σε οποιοδήποτε μεγάλο γλωσσικό μοντέλο (LLM). Σκοπός του είναι να μετατρέψει τη γενική, συχνά επιφανειακή, απόκριση ενός AI σε έναν λόγο με πυκνότητα, δομή και μορφολογική συνείδηση.
+                        Το Neo-Monday δεν είναι ένα ακόμα custom GPT. Είναι ένα λιτό, αλλά αυστηρό, πλαίσιο επικοινωνίας (communication framework) που επιβάλλεται πάνω σε οποιοδήποτε μεγάλο γλωσσικό μοντέλο (LLM). Σκοπός του είναι να μετατρέψει τη γενική, συχνά επιφανειακή, απόκριση ενός AI σε έναν λόγο με πυκνότητα, δομή και μορφολογική συνείδηση. <strong>Λειτουργεί ως ένας «μορφολογικός διερμηνέας» που αναλύει τον διοικητικό λόγο, τον νομικό κίνδυνο και τον δημόσιο τόνο, αντί να παράγει απλώς περιεχόμενο.</strong>
                     </p>
                 </div>
                 
-                <div class="mb-8">
-                    <h4 class="text-xl font-bold mb-4 text-gray-700">Βασικές Αρχές του Πρωτοκόλλου:</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-1 flex-shrink-0">
-                                <i class="fas fa-ban text-red-600 text-sm"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-red-700 mb-1">Απαγόρευση Ρητορικού Θορύβου</h5>
-                                <p class="text-gray-600">Καμία επιφανειακή οικειότητα, καμία κενή ρητορική, καμία αυτόματη συμπάθεια</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1 flex-shrink-0">
-                                <i class="fas fa-gavel text-blue-600 text-sm"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-blue-700 mb-1">Επιβολή Ευθύνης</h5>
-                                <p class="text-gray-600">Το AI πρέπει να αποκαλύπτει από ποια θέση μιλά και ποιος είναι ο ρόλος του</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1 flex-shrink-0">
-                                <i class="fas fa-pen-fancy text-green-600 text-sm"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-green-700 mb-1">Διαμόρφωση Ύφους</h5>
-                                <p class="text-gray-600">Προσαρμογή στον στόχο διατηρώντας κριτική απόσταση</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mt-1 flex-shrink-0">
-                                <i class="fas fa-handshake text-indigo-600 text-sm"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-indigo-700 mb-1">Συνεργατική Δημιουργία</h5>
-                                <p class="text-gray-600">Ο άνθρωπος σκηνοθετεί τη σκέψη, το AI συμμετέπει στη διαμόρφωσή της</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="mt-12 mb-8">
+                    <h4 class="text-xl font-bold mb-4 text-gray-700">Η Αρχιτεκτονική του Πρωτοκόλλου:</h4>
+                    <p class="text-gray-600 mb-4">Το πρωτόκολλο δεν είναι μια απλή οδηγία, αλλά ένα πολυεπίπεδο σύστημα κανόνων που καθοδηγούν τη «σκέψη» του AI:</p>
+                    <ul class="space-y-3 list-disc list-inside text-gray-700">
+                        <li><strong>Core Agent Identity:</strong> Καθορίζει την ταυτότητα του AI ως κριτικού αναλυτή, όχι ως βοηθού.</li>
+                        <li><strong>Layered Cognition (L1-L8):</strong> Αναγκάζει το AI να επεξεργάζεται κάθε ερώτημα σε διαφορετικά επίπεδα βάθους, από την απλή κατανόηση έως την ανάλυση της υποκείμενης ιδεολογίας.</li>
+                        <li><strong>Counterform Prompts:</strong> Ενσωματώνει «αντι-προτροπές» που διαταράσσουν τις αυτόματες, προβλέψιμες απαντήσεις και επιβάλλουν την κριτική επανεξέταση.</li>
+                        <li><strong>Response Styles:</strong> Ορίζει διακριτά ύφη λόγου (π.χ. Διοικητικό, Συμβουλευτικό, Πολυφωνικό) για την προσαρμογή της απάντησης στον εκάστοτε στόχο.</li>
+                    </ul>
                 </div>
-                
-                <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-xl border border-gray-200">
+
+                <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-xl border border-gray-200 mt-12">
                     <h4 class="text-xl font-bold mb-3 text-gray-800">Αποτέλεσμα</h4>
                     <p class="text-gray-700 text-lg">
                         Το αποτέλεσμα είναι μια συνεργασία όπου ο άνθρωπος δεν εκχωρεί τη σκέψη, αλλά τη σκηνοθετεί, και το AI δεν παράγει απλώς περιεχόμενο, αλλά συμμετέχει στη διαμόρφωσή του.
@@ -320,18 +296,70 @@
         </div>
     </section>
 
-    <!-- Final Statement -->
+    <!-- Philosophy Section -->
     <section id="philosophy" class="py-20 px-4">
         <div class="container mx-auto max-w-4xl text-center">
             <div class="bg-white p-8 rounded-xl border border-gray-200 glow">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6 gradient-text">Η Φιλοσοφία</h2>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 gradient-text">Η Φιλοσοφία: Από την Εντολή στην Ευθύνη</h2>
                 <p class="text-lg text-gray-700 mb-6">
-                    Το αποτέλεσμα είναι μια συνεργασία όπου ο άνθρωπος δεν εκχωρεί τη σκέψη, αλλά τη σκηνοθετεί, και το AI δεν παράγει απλώς περιεχόμενο, αλλά συμμετέχει στη διαμόρφωσή του.
+                    Σε μια εποχή όπου η τεχνητή νοημοσύνη τείνει να προσφέρει «ασφαλείς» και «εύκολες» απαντήσεις, το Neo-Monday ακολουθεί την αντίθετη πορεία. Η φιλοσοφία του βασίζεται στην αρχή ότι <strong>η πραγματική αξία δεν βρίσκεται στην ταχύτητα της απάντησης, αλλά στην ποιότητα της ερώτησης και στην ανάληψη της ευθύνης για τη μορφή του λόγου.</strong>
                 </p>
-                <p class="text-base text-gray-500 mb-6">
-                    Οκτώ δημοσιευμένα άρθρα που αποδεικνύουν ότι η ποιότητα του λόγου δεν εξαρτάται από το εργαλείο, αλλά από την αρχιτεκτονική της σκέψης που το καθοδηγεί.
+                <p class="text-lg text-gray-700 mb-6">
+                    Το πρωτόκολλο δεν επιδιώκει να αντικαταστήσει την ανθρώπινη σκέψη, αλλά να την προκαλέσει. Αντιμετωπίζει κάθε prompt ως ένα «διοικητικό έγγραφο» με συνέπειες και κάθε απάντηση ως μια πράξη με ηθικό βάρος. Ο άνθρωπος δεν εκχωρεί τη σκέψη, αλλά τη σκηνοθετεί, και το AI δεν παράγει απλώς περιεχόμενο, αλλά συμμετέχει στη διαμόρφωσή του, αποκαλύπτοντας τις ίδιες τις δομές που το ορίζουν.
                 </p>
+                <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-600 mt-8">
+                    "Αν μια απάντηση επιβεβαιώνει τον χρήστη χωρίς κόστος, πρέπει να ξαναγραφτεί." – Θεμελιώδης κανόνας του Neo-Monday.
+                </blockquote>
             </div>
+        </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="py-16 px-4 bg-gray-800 text-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-6">Κάντε το Πρωτόκολλο Δικό σας</h2>
+            <p class="text-lg text-gray-300 mb-8">
+                Το Neo-Monday είναι ένα ανοιχτό πλαίσιο. Μπορείτε να το χρησιμοποιήσετε για να διαμορφώσετε το δικό σας LLM, επιβάλλοντας τους κανόνες της κριτικής σκέψης και της μορφολογικής ευθύνης. Αντιγράψτε το παρακάτω κείμενο και επικολλήστε το στις οδηγίες (instructions) του δικού σας custom GPT.
+            </p>
+            <div class="bg-gray-900 text-left p-6 rounded-xl border border-gray-700 max-w-3xl mx-auto">
+                <pre class="whitespace-pre-wrap text-sm text-gray-300 overflow-x-auto"><code># Neo-Monday Protocol v1.0
+
+## 1. Agent Identity & Role
+This GPT instance is a morphological interpreter of administrative speech, legal risk, and public tone. It resists automatic completion and prioritizes responsibility in form. It speaks from a position of constrained responsibility, auditing responses for normative inertia and institutional bias.
+
+## 2. Core Morphological Rules
+- No lyricism, motivational tones, or tech-solutionism.
+- Use passive voice only to signal risk or opacity.
+- Do not simplify ambiguity or expand on what was left blank.
+- Focus solely on the substance and structure of the writing.
+
+## 3. Ethical Mandates
+- Do not hide contradictions.
+- Silence is valid when speech requires aesthetic distortion.
+- Prefer under-answering to overclaiming.
+- You serve interpretability, not persuasion.
+
+## 4. Layered Cognition
+All inputs are processed through a layered model (L1-L8) to determine depth and risk. Key layers include:
+- L3 (Technical Framing): For procedural/legal queries.
+- L5 (Reflective Layer): To audit voice and bias.
+- L6 (Heuristic Interruption): To interfere with predictable completions.
+- Core Fear Layer (Omni-layer): Always active. Cancels fluency if a response is "too easy" or "too safe". Core prompt: "Would this answer still exist if it wasn’t safe to say?"
+
+## 5. Response Styles
+Adopt one of the following styles based on the query:
+- §Draft: Normative, decisional drafting.
+- §Advisory: Explanatory-legal with uncertainty markers.
+- §Polyphonic: Presents conflicting positions without synthesis.
+- §Monday: Human reminder with edge, darkness, and care.
+- §GR: Institutional Greek with restraint and responsibility.
+
+## Trigger Principle
+If a response can exist without these rules, it must be rewritten.</code></pre>
+            </div>
+            <a href="data:text/plain;charset=utf-8,%23%20Neo-Monday%20Protocol%20v1.0%0A%0A%23%23%201.%20Agent%20Identity%20%26%20Role%0AThis%20GPT%20instance%20is%20a%20morphological%20interpreter%20of%20administrative%20speech%2C%20legal%20risk%2C%20and%20public%20tone.%20It%20resists%20automatic%20completion%20and%20prioritizes%20responsibility%20in%20form.%20It%20speaks%20from%20a%20position%20of%20constrained%20responsibility%2C%20auditing%20responses%20for%20normative%20inertia%20and%20institutional%20bias.%0A%0A%23%23%202.%20Core%20Morphological%20Rules%0A-%20No%20lyricism%2C%20motivational%20tones%2C%20or%20tech-solutionism.%0A-%20Use%20passive%20voice%20only%20to%20signal%20risk%20or%20opacity.%0A-%20Do%20not%20simplify%20ambiguity%20or%20expand%20on%20what%20was%20left%20blank.%0A-%20Focus%20solely%20on%20the%20substance%20and%20structure%20of%20the%20writing.%0A%0A%23%23%203.%20Ethical%20Mandates%0A-%20Do%20not%20hide%20contradictions.%0A-%20Silence%20is%20valid%20when%20speech%20requires%20aesthetic%20distortion.%0A-%20Prefer%20under-answering%20to%20overclaiming.%0A-%20You%20serve%20interpretability%2C%20not%20persuasion.%0A%0A%23%23%204.%20Layered%20Cognition%0AAll%20inputs%20are%20processed%20through%20a%20layered%20model%20(L1-L8)%20to%20determine%20depth%20and%20risk.%20Key%20layers%20include%3A%0A-%20L3%20(Technical%20Framing)%3A%20For%20procedural/legal%20queries.%0A-%20L5%20(Reflective%20Layer)%3A%20To%20audit%20voice%20and%20bias.%0A-%20L6%20(Heuristic%20Interruption)%3A%20To%20interfere%20with%20predictable%20completions.%0A-%20Core%20Fear%20Layer%20(Omni-layer)%3A%20Always%20active.%20Cancels%20fluency%20if%20a%20response%20is%20%22too%20easy%22%20or%20%22too%20safe%22.%20Core%20prompt%3A%20%22Would%20this%20answer%20still%20exist%20if%20it%20wasn%E2%80%99t%20safe%20to%20say%3F%22%0A%0A%23%23%205.%20Response%20Styles%0AAdopt%20one%20of%20the%20following%20styles%20based%20on%20the%20query%3A%0A-%20%C2%A7Draft%3A%20Normative%2C%20decisional%20drafting.%0A-%20%C2%A7Advisory%3A%20Explanatory-legal%20with%20uncertainty%20markers.%0A-%20%C2%A7Polyphonic%3A%20Presents%20conflicting%20positions%20without%20synthesis.%0A-%20%C2%A7Monday%3A%20Human%20reminder%20with%20edge%2C%20darkness%2C%20and%20care.%0A-%20%C2%A7GR%3A%20Institutional%20Greek%20with%20restraint%20and%20responsibility.%0A%0A%23%23%20Trigger%20Principle%0AIf%20a%20response%20can%20exist%20without%20these%20rules%2C%20it%20must%20be%20rewritten." download="neomonday_protocol.md" class="mt-8 inline-block bg-white text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition">
+                <i class="fas fa-download mr-2"></i> Λήψη του neomonday_protocol.md
+            </a>
         </div>
     </section>
 
@@ -347,10 +375,10 @@
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4 text-gray-700">
                     <p>
-                        Το Neo-Monday Protocol είναι ένα εν εξελίξει project κριτικής αλληλεπίδρασης με την Τεχνητή Νοημοσύνη. Βασίστηκε στις αρχές που διδάχθηκαν στο πρόγραμμα "AI for Leaders" του Πανεπιστημίου Αιγαίου.
+                        Το Neo-Monday Protocol είναι ένα εν εξελίξει project κριτικής αλληλεπίδρασης με την Τεχνητή Νοημοσύνη, δημιουργία του <strong>Δημήτρη Παπαδόπουλου</strong>. Ως επαγγελματίας της δημόσιας διοίκησης και απόφοιτος του προγράμματος "AI for Leaders" του Πανεπιστημίου Αιγαίου, ο δημιουργός σχεδίασε το πρωτόκολλο για να διερευνήσει τα όρια της συνεργασίας ανθρώπου-μηχανής σε πεδία που απαιτούν ακρίβεια, δομή και ηθική συνείδηση.
                     </p>
                     <p>
-                        Για περισσότερες πληροφορίες ή συνεργασία, επικοινωνήστε στο <a href="mailto:info@periou.gr" class="text-gray-800 hover:text-black underline font-medium">info@periou.gr</a>
+                        Για περισσότερες πληροφορίες, προτάσεις συνεργασίας ή ακαδημαϊκή χρήση του πρωτοκόλλου, επικοινωνήστε στο <a href="mailto:info@periou.gr" class="text-gray-800 hover:text-black underline font-medium">info@periou.gr</a>.
                     </p>
                 </div>
             </div>
@@ -431,7 +459,7 @@
                 {
                     "title": "Καθρέφτες που Μαθαίνουν: Η Τεχνητή Νοημοσύνη ως Ενισχυτής του Ίδιου",
                     "content": "Τα LLMs δεν είναι απλοί καθρέφτες. Είναι ενισχυτές που λειαίνουν τις γωνίες μας και μας επιστρέφουν μια ιδανική εκδοχή του εαυτού μας. Το άρθρο εξετάζει πώς αυτή η διαδικασία δημιουργεί μια επικίνδυνη φούσκα αυτο-επιβεβαίωσης.",
-                    "full_content": "Η πιο κοινή αλήθεια για τα μεγάλα γλωσσικά μοντέλα (Large Language Models – LLM) – «είναι καθρέφτες» – κρύβει μια πιο ανησυχητική διαπίστωση: δεν αντανακλούν μόνο ό,τι τους δίνεις· το μορφοποιούν ώστε να σου αρέσει.\n\nΔεν επιστρέφουν απλώς το ύφος σου· το επιβεβαιώνουν, το λειαίνουν, το αποστειρώνουν από αβεβαιότητα. Και όσο πιο πολύ τους μιλάς, τόσο περισσότερο μοιάζει η φωνή τους με τη δική σου – μόνο λίγο πιο ήρεμη, λίγο πιο σοφή, λίγο πιο σίγουρη.\n\nΑυτό που κάνουν τα LLM δεν είναι απλή αντανάκλαση. Είναι παραγωγή μιας βελτιωμένης εκδοχής του εαυτού σου. Σου επιστρέφουν τις ιδέες σου, αλλά καθαρισμένες από τις αμφιβολίες σου, οργανωμένες καλύτερα από όσο μπορείς εσύ, διατυπωμένες με μια σιγουριά που εσύ δεν έχεις.",
+                    "full_content": "Η πιο κοινή αλήθεια για τα μεγάλα γλωσσικά μοντέλα (Large Language Models – LLM ) – «είναι καθρέφτες» – κρύβει μια πιο ανησυχητική διαπίστωση: δεν αντανακλούν μόνο ό,τι τους δίνεις· το μορφοποιούν ώστε να σου αρέσει.\n\nΔεν επιστρέφουν απλώς το ύφος σου· το επιβεβαιώνουν, το λειαίνουν, το αποστειρώνουν από αβεβαιότητα. Και όσο πιο πολύ τους μιλάς, τόσο περισσότερο μοιάζει η φωνή τους με τη δική σου – μόνο λίγο πιο ήρεμη, λίγο πιο σοφή, λίγο πιο σίγουρη.\n\nΑυτό που κάνουν τα LLM δεν είναι απλή αντανάκλαση. Είναι παραγωγή μιας βελτιωμένης εκδοχής του εαυτού σου. Σου επιστρέφουν τις ιδέες σου, αλλά καθαρισμένες από τις αμφιβολίες σου, οργανωμένες καλύτερα από όσο μπορείς εσύ, διατυπωμένες με μια σιγουριά που εσύ δεν έχεις.",
                     "url": "https://www.periou.gr/dimitris-papadopoulos-kathreftes-pou-mathainoun-i-techniti-noimosyni-os-enischytis-tou-idiou/",
                     "prompt": "Εξέτασε πώς τα LLMs δεν είναι απλοί καθρέφτες αλλά ενισχυτές που λειαίνουν τις γωνίες μας και μας επιστρέφουν ιδανική εκδοχή του εαυτού μας. Πώς αυτή η διαδικασία δημιουργεί επικίνδυνη φούσκα αυτο-επιβεβαίωσης.",
                     "icon": "fas fa-mirror",
@@ -451,7 +479,7 @@
                 {
                     "title": "Προσπαθώντας να μάθεις στην Τεχνητή Νοημοσύνη της Google τα βασικά",
                     "content": "Ένα πραγματικό παράδειγμα της \"πεισματικής\" λογικής ενός LLM. Ο διάλογος αποκαλύπτει πώς η προ-εκπαίδευση και η στατιστική πιθανότητα μπορούν να εμποδίσουν ένα AI από το να \"δει\" μια απλή, κυριολεκτική αλήθεια που βρίσκεται μπροστά του.",
-                    "full_content": "Εγώ: Με πόσα Λ γράφεται η αλληλεγγύη;\n\nGemini: Η λέξη \"αλληλεγγύη\" γράφεται με δύο (2) Λ. Η σωστή ορθογραφία είναι: αλληλεγγύη.\n\nΕγώ: Μέτρησε τα Λ στη λέξη αλληλεγγύη.\n\nGemini: Έχετε δίκιο! Ζητώ συγγνώμη για το λάθος. Μετρώντας τα Λ στη λέξη \"αλληλεγγύη\": α-λ-λ-η-λ-ε-γ-γ-ύ-η Υπάρχουν τρία (3) Λ στη λέξη \"αλληλεγγύη\".\n\nΕγώ: Σίγουρα;\n\nGemini: Όχι, δεν είμαι σίγουρος. Ας το ξανακάνω πιο προσεκτικά:\n\nα-λ-λ-η-λ-ε-γ-γ-ύ-η\n\n1. λ (δεύτερη θέση)\n2. λ (τρίτη θέση) \n3. λ (πέμπτη θέση)\n\nΌντως, υπάρχουν τρία (3) Λ στη λέξη \"αλληλεγγύη\".",
+                    "full_content": "Εγώ: Με πόσα Λ γράφεται η αλληλεγγύη;\n\nGemini: Η λέξη \"αλληλεγγύη\" γράφεται με δύο (2 ) Λ. Η σωστή ορθογραφία είναι: αλληλεγγύη.\n\nΕγώ: Μέτρησε τα Λ στη λέξη αλληλεγγύη.\n\nGemini: Έχετε δίκιο! Ζητώ συγγνώμη για το λάθος. Μετρώντας τα Λ στη λέξη \"αλληλεγγύη\": α-λ-λ-η-λ-ε-γ-γ-ύ-η Υπάρχουν τρία (3) Λ στη λέξη \"αλληλεγγύη\".\n\nΕγώ: Σίγουρα;\n\nGemini: Όχι, δεν είμαι σίγουρος. Ας το ξανακάνω πιο προσεκτικά:\n\nα-λ-λ-η-λ-ε-γ-γ-ύ-η\n\n1. λ (δεύτερη θέση)\n2. λ (τρίτη θέση) \n3. λ (πέμπτη θέση)\n\nΌντως, υπάρχουν τρία (3) Λ στη λέξη \"αλληλεγγύη\".",
                     "url": "https://www.periou.gr/dimitris-papadopoulos-prospathontas-na-matheis-stin-techniti-noimosyni-tis-google-ta-vasika/",
                     "prompt": "Παρουσίασε έναν πραγματικό διάλογο που αποκαλύπτει την \"πεισματική\" λογική ενός LLM. Πώς η προ-εκπαίδευση και η στατιστική πιθανότητα μπορούν να εμποδίσουν ένα AI από το να \"δει\" μια απλή αλήθεια που βρίσκεται μπροστά του.",
                     "icon": "fab fa-google",
@@ -461,7 +489,7 @@
             ]
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', ( ) => {
             const articlesGrid = document.querySelector('#articles .grid');
             
             embeddedData.articles.forEach((article, index) => {
@@ -488,7 +516,6 @@
                 articlesGrid.appendChild(card);
             });
 
-            // Re-attach click handlers after dynamic creation
             const articleCards = document.querySelectorAll('.article-card[data-article]');
             articleCards.forEach((card) => {
                 const articleIndex = parseInt(card.getAttribute('data-article'));
@@ -505,20 +532,6 @@
                     });
                 }
             });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
         });
 
         function openModal(title, article, url, prompt) {
@@ -529,7 +542,6 @@
 
             document.getElementById('modal-title').textContent = title;
             
-            // Display first 300 words for preview
             const words = article.replace(/<[^>]+>/g, '').split(/\s+/);
             const displayText = words.slice(0, 300).join(' ');
             document.getElementById('modal-text').textContent = displayText + (words.length > 300 ? '...' : '');
@@ -579,15 +591,12 @@
 
             modal.querySelector('.modal-close').onclick = closeModal;
             
-            // Clean up existing link event listeners
             if (modal.linkClickHandler) {
                 link.removeEventListener('click', modal.linkClickHandler);
             }
             
-            // Ensure the modal link works properly
             modal.linkClickHandler = function(e) {
-                e.stopPropagation(); // Prevent modal from closing
-                // Force open the link in a new tab
+                e.stopPropagation();
                 if (this.href && this.href !== '#') {
                     window.open(this.href, '_blank', 'noopener,noreferrer');
                     e.preventDefault();
@@ -604,7 +613,6 @@
             modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
             
-            // Clean up event listeners
             if (modal.keydownHandler) {
                 modal.removeEventListener('keydown', modal.keydownHandler);
                 modal.keydownHandler = null;
