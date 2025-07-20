@@ -64,7 +64,7 @@ If a response can exist without these rules, it must be rewritten.
 
 *   **Δημήτρης Παπαδόπουλος**
 *   Επικοινωνία: `deefunxion@gmail.com`
-*   Ιστοσελίδα: [Neo-Monday Protocol](https://deefunxion.github.io/AILEADER/) (Αντικατάστησε το με το σωστό URL όταν το έχεις)
+*   Ιστοσελίδα: [Neo-Monday Protocol](https://deefunxion.github.io/AILEADER/)
 
 ## Άδεια Χρήσης
 
