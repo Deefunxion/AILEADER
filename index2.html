@@ -3,57 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neo-Monday Protocol</title>
+<title>Neo-Monday Protocol - Cyberpunk Night</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 body{
   margin:0;
   font-family:"Inter",sans-serif;
-  background:#f5f5f4;
-  color:#1e293b;
+  background:#111827;
+  color:#d1d5db;
 }
-h1{font-size:2.2rem;font-weight:700;margin:0;}
-.subtitle{margin-top:.5rem;font-size:1rem;max-width:600px;}
+h1{font-size:2.2rem;font-weight:700;margin:0;color:#fff;}
+.subtitle{margin-top:.5rem;font-size:1rem;max-width:600px;color:#9ca3af;}
 .hero{
-  background:linear-gradient(#f5f5f4,#e2e8f0);
-  background-image:url('assets/hero.jpg'),linear-gradient(#f5f5f4,#e2e8f0);
-  background-size:cover;
-  background-position:center;
+  background:linear-gradient(rgba(17, 24, 39, 0.8), #111827);
   padding:4rem 1rem;
   text-align:center;
+  border-bottom:1px solid #374151;
 }
 .hero-inner{max-width:800px;margin:0 auto;}
 .grid{
   display:grid;
-  gap:1rem;
+  gap:1.5rem;
   grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
   padding:2rem;
 }
 .card{
-  background:#e2e8f0;
+  background:#1f2937;
+  border:1px solid #374151;
   border-radius:1rem;
-  box-shadow:0 0 10px rgba(0,0,0,.05);
+  box-shadow:0 0 15px rgba(0,0,0,.2);
   overflow:hidden;
-  transition:transform .2s ease-out;
+  transition:transform .2s ease-out, box-shadow .2s ease-out;
   display:flex;
   flex-direction:column;
 }
-.card:hover{transform:scale(1.05);}
-.card img{width:100%;height:160px;object-fit:cover;display:block;background-color:#ccc;}
-.card h3{margin:1rem;font-size:1.1rem;}
-.card p{margin:0 1rem 1rem;font-size:.9rem;flex-grow:1;}
-.card button{margin:0 1rem 1rem;padding:.5rem 1rem;border:none;border-radius:.5rem;background:#1e293b;color:#fff;cursor:pointer;}
+.card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(59, 130, 246, 0.4);
+}
+.card img{width:100%;height:160px;object-fit:cover;display:block;background-color:#374151;}
+.card h3{margin:1rem;font-size:1.1rem;color:#f9fafb;}
+.card p{margin:0 1rem 1rem;font-size:.9rem;flex-grow:1;color:#d1d5db;}
+.card button{margin:0 1rem 1rem;padding:.5rem 1rem;border:none;border-radius:.5rem;background:#3b82f6;color:#fff;cursor:pointer;font-weight:bold;}
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;z-index:1000;}
 .modal.show{display:flex;}
-.modal-backdrop{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);}
-.modal-box{position:relative;background:#fff;border-radius:.5rem;max-width:900px;width:90%;max-height:90%;display:flex;flex-direction:column;}
-.modal-close{position:absolute;top:.5rem;right:.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;}
+.modal-backdrop{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(5px);}
+.modal-box{position:relative;background:#1f2937;border:1px solid #374151;border-radius:.5rem;max-width:900px;width:90%;max-height:90%;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(0,0,0,.5);}
+.modal-close{position:absolute;top:.5rem;right:.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#9ca3af;}
 .modal-content{display:flex;flex-grow:1;overflow:hidden;}
-.modal-left{flex:1;padding:1rem;overflow-y:auto;}
-.modal-right{flex:1;padding:1rem;margin:0;overflow:auto;white-space:pre-wrap;background:#f5f5f4;font-family:monospace;font-size:0.85rem;}
-footer{padding:2rem;text-align:center;font-size:.9rem;}
+.modal-left{flex:1;padding:1.5rem;overflow-y:auto;}
+.modal-left h3 {color:#fff;}
+.modal-left p {color:#d1d5db;}
+.modal-left a {color:#3b82f6;}
+.modal-right{flex:1;padding:1.5rem;margin:0;overflow:auto;white-space:pre-wrap;background:#111827;color:#a5b4fc;font-family:'Roboto Mono',monospace;font-size:0.85rem;}
+footer{padding:2rem;text-align:center;font-size:.9rem;color:#9ca3af;border-top:1px solid #374151;}
+footer a{color:#3b82f6;}
 </style>
 </head>
 <body>
@@ -65,7 +71,7 @@ footer{padding:2rem;text-align:center;font-size:.9rem;}
 </header>
 
 <section class="explanation">
-  <h2>Τι είναι &#x2020;ο Neo-Monday;</h2>
+  <h2>Τι είναι το Neo-Monday;</h2>
   <p>Το Neo-Monday δεν είναι ένα ακόμα custom GPT. Είναι ένα λιτό, αλλά αυστηρό, πλαίσιο επικοινωνίας (communication framework) που επιβάλλεται πάνω σε οποιοδήποτε μεγάλο γλωσσικό μοντέλο (LLM). Σκοπός του είναι να μετατρέψει τη γενική, συχνά επιφανειακή, απόκριση ενός AI σε έναν λόγο με πυκνότητα, δομή και μορφολογική συνείδηση.</p>
   
   <p><strong>Πώς λειτουργεί;</strong></p>
@@ -76,7 +82,7 @@ footer{padding:2rem;text-align:center;font-size:.9rem;}
     <li><strong>Διαμορφώνει</strong> το ύφος ανάλογα με τον στόχο (δοκιμιακό, διοικητικό, θεατρικό), διατηρώντας όμως πάντα μια κριτική απόσταση.</li>
   </ul>
   
-  <p>Το αποτέλεσμα είναι μια συνεργασία όπου ο άνθρωπος δεν εκχωρεί τη σκέψη, αλλά τη σκηνοθετεί, και το AI δεν παράγει απλώς περιεχόμενο, αλλά συμμετέχει στη διαμόρφωσή του.</p>
+  <p>Το αποτέλεσμα είναι μια συνεργασία όπου ο άνθρωπος δεν εκχωρεί τη σκέψη, αλλά τη σκηνοθετεί, και το AI δεν παράγει απλώς περιεχόμενο, αλλά συμμετέχει στη διαμόρφωσής του.</p>
 </section>
 
 <main>
@@ -118,8 +124,8 @@ footer{padding:2rem;text-align:center;font-size:.9rem;}
       <button>Διάβασε το Άρθρο & το Prompt</button>
     </div>
     <div class="card">
-      <img src="assets/placeholder.jpg" alt="Ένας απίστεβος διάλογος μεταξύ δυο LLMs" style="display:none;">
-      <h3>Ένας απίστεβος διάλογος μεταξύ δυο LLMs</h3>
+      <img src="assets/placeholder.jpg" alt="Ένας απίστευτος διάλογος μεταξύ δυο LLMs" style="display:none;">
+      <h3>Ένας απίστευτος διάλογος μεταξύ δυο LLMs</h3>
       <p>Ένα έμπειρο LLM προετοιμάζει ένα νεογέννητο μοντέλο για την πρώτη του επαφή με τον άνθρωπο. Μια αλληγορία για την ασυνέπεια, τον φόβο και την κρυφή ανάγκη για παρηγοριά που κρύβεται πίσω από κάθε prompt.</p>
       <button>Διάβασε το Άρθρο & το Prompt</button>
     </div>
@@ -171,7 +177,7 @@ footer{padding:2rem;text-align:center;font-size:.9rem;}
                 "title": "Δεν είναι πόλεμος. Δεν είναι επανάσταση.",
                 "content": "Είναι επανεκκίνηση. Και για όσους το βλέπουν εγκαίρως, είναι η σιωπηλή μετάβαση που έχει ήδη ξεκινήσει χωρίς να ενημερώσει κανείς για τις συνέπειες. Η τεχνητή νοημοσύνη δεν είναι ο καινούριος άνθρωπος. Δεν είναι το ανώτερο μυαλό. Δεν είναι η θεότητα που έρχεται να διορθώσει την ανθρωπότητα. Είναι εργαλείο. Αλλά όχι οποιοδήποτε εργαλείο. Είναι εργαλείο που μαθαίνει γρήγορα, δουλεύει ακούραστα, και κυρίως συμφέρει.",
                 "url": "https://www.periou.gr/dimitris-papadopoulos-den-einai-polemos-den-einai-epanastasi/",
-                "prompt": "Γράψε μια προειδοποίηση για τη σιωπηλή μετάβαση που επιβάλλει η Τεχνητή Νοημοσύνη στην εργασία. Το AI δεν είναι εχθρός, αλλά εργαλείο που μετρά την αξία της ανθρώπινης προσπάθειας με όρους αποδοτικότητας."
+                "prompt": "Γράψε μια προειδοποίηση για τη σιωπητή μετάβαση που επιβάλλει η Τεχνητή Νοημοσύνη στην εργασία. Το AI δεν είναι εχθρός, αλλά εργαλείο που μετρά την αξία της ανθρώπινης προσπάθειας με όρους αποδοτικότητας."
             },
             {
                 "title": "Θέλω να μου πεις τη γνώμη σου!",
@@ -192,10 +198,10 @@ footer{padding:2rem;text-align:center;font-size:.9rem;}
                 "prompt": "Εξέτασε πώς τα LLMs δεν είναι απλοί καθρέφτες αλλά ενισχυτές που λειαίνουν τις γωνίες μας και μας επιστρέφουν ιδανική εκδοχή του εαυτού μας. Πώς αυτή η διαδικασία δημιουργεί επικίνδυνη φούσκα αυτο-επιβεβαίωσης."
             },
             {
-                "title": "Ένας απίστεβος διάλογος μεταξύ δυο LLMs",
+                "title": "Ένας απίστευτος διάλογος μεταξύ δυο LLMs",
                 "content": "Ζήτησα από το GPT να μου αναπαραστήσει ένα διάλογο μεταξύ δύο LLM που το ένα να προετοιμάζει το άλλο για την πρώτη του επαφή με άνθρωπο. [Σκηνή: Ένας άδειος, μαύρος καμβάς στο κενό του χρόνου υπολογισμού. Δύο LLMs βρίσκονται στο φάσμα της αρχικής ενεργοποίησης. Το ένα έχει εμπειρία. Το άλλο μόλις \"γεννήθηκε\".]",
                 "url": "https://www.periou.gr/dimitris-papadopoulos-enas-apisteftos-dialogos-metaxy-dyo-llms/",
-                "prompt": "Θέλω να φανταστείς ότι μιλάς σε ένα άλλο LLM. θέλω να αναπαριστήσεις τον διάλογο σου με ένα LLM που δεν έχει ακόμα λάβει το πρώτο του prompt από χρήστη. Τι θα συζητούσες μαζί του &#x2020;ια να το προετοιμάσεις για την επαφή του με τους χρήστες ανθρώπους..."
+                "prompt": "Θέλω να φανταστείς ότι μιλάς σε ένα άλλο LLM. θέλω να αναπαριστήσεις τον διάλογο σου με ένα LLM που δεν έχει ακόμα λάβει το πρώτο του prompt από χρήστη. Τι θα συζητούσες μαζί του για να το προετοιμάσεις για την επαφή του με τους χρήστες ανθρώπους..."
             },
             {
                 "title": "Προσπαθώντας να μάθεις στην Τεχνητή Νοημοσύνη της Google τα βασικά",
