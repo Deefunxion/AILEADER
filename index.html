@@ -311,8 +311,22 @@
     <section id="articles" class="py-16 px-4">
         <div class="container mx-auto max-w-6xl">
             <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Δημοσιευμένα Άρθρα</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Article Cards will be populated by script -->
+            
+            <!-- First Row: 3 articles -->
+            <div class="grid md:grid-cols-3 gap-8 mb-8" id="articles-row-1">
+                <!-- First 3 articles will be populated here -->
+            </div>
+            
+            <!-- Second Row: 2 articles centered -->
+            <div class="flex justify-center mb-8">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl" id="articles-row-2">
+                    <!-- Middle 2 articles will be populated here -->
+                </div>
+            </div>
+            
+            <!-- Third Row: 3 articles -->
+            <div class="grid md:grid-cols-3 gap-8" id="articles-row-3">
+                <!-- Last 3 articles will be populated here -->
             </div>
         </div>
     </section>
@@ -340,7 +354,7 @@
         <div class="container mx-auto max-w-4xl text-center">
             <h2 class="text-3xl font-bold mb-6">Κάντε το Πρωτόκολλο Δικό σας</h2>
             <p class="text-lg text-gray-300 mb-8">
-                Το Neo-Monday είναι ένα ανοιχτό πλαίσιο. Μπορείτε να το χρησιμοποιήσετε για να διαμορφώσετε το δικό σας LLM, επιβάλλοντας τους κανόνες της κριτικής σκέψης και της μορφολογικής ευθύνης. Αντιγράψτε το παρακάτω κείμενο και επικολλήστε το στις οδηγίες (instructions) του δικού σας custom GPT.
+                Το Neo-Monday είναι ένα ανοιχτό πλαίσιο. Μπορείτε να το χρησιμοποιήσετε για να διαμορφώσετε το δικό σας LLM, επιβάλλοντας τους κανόνες της κριτικής σκέψης και της μορφολογικής ευθύνης. Αντιγράψτε το παρακάτω κείμενο και επικολλήστε το στις οδηγίες (instructions) του δικού σας custom GPT ή οποιουδήποτε άλλου LLM.
             </p>
             
             <!-- Protocol Preview Table -->
@@ -755,7 +769,7 @@ Each prompt is tied to **Layer 4–6** and works by re-framing or rewriting the 
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4 text-gray-700">
                     <p>
-                        Το Neo-Monday Protocol είναι ένα εν εξελίξει project κριτικής αλληλεπίδρασης με την Τεχνητή Νοημοσύνη, δημιουργία του <strong>Δημήτρη Παπαδόπουλου</strong>. Ως επαγγελματίας της δημόσιας διοίκησης και απόφοιτος του προγράμματος "AI for Leaders" του Πανεπιστημίου Αιγαίου, ο δημιουργός σχεδίασε το πρωτόκολλο για να διερευνήσει τα όρια της συνεργασίας ανθρώπου-μηχανής σε πεδία που απαιτούν ακρίβεια, δομή και ηθική συνείδηση.
+                        Το Neo-Monday Protocol είναι ένα εν εξελίξει project κριτικής αλληλεπίδρασης με την Τεχνητή Νοημοσύνη, δημιουργία του <strong>Δημήτρη Παπαδόπουλου</strong>. Ως επαγγελματίας της δημόσιας διοίκησης και στο πλαίσιο της συμμετοχής του στο πρόγραμμα "AI for Leaders" του Πανεπιστημίου Αιγαίου, ο δημιουργός σχεδίασε το πρωτόκολλο για να διερευνήσει τα όρια της συνεργασίας ανθρώπου-μηχανής σε πεδία που απαιτούν ακρίβεια, δομή και ηθική συνείδηση.
                     </p>
                     <p>
                         Για περισσότερες πληροφορίες, προτάσεις συνεργασίας ή ακαδημαϊκή χρήση του πρωτοκόλλου, επικοινωνήστε στο <a href="mailto:deefunxion@gmail.com" class="text-gray-800 hover:text-black underline font-medium">deefunxion@gmail.com</a>.
@@ -862,7 +876,10 @@ Each prompt is tied to **Layer 4–6** and works by re-framing or rewriting the 
         };
 
         document.addEventListener('DOMContentLoaded', ( ) => {
-            const articlesGrid = document.querySelector('#articles .grid');
+            // Get the three different grids
+            const row1Grid = document.querySelector('#articles-row-1');
+            const row2Grid = document.querySelector('#articles-row-2');
+            const row3Grid = document.querySelector('#articles-row-3');
             
             embeddedData.articles.forEach((article, index) => {
                 const card = document.createElement('div');
@@ -890,7 +907,18 @@ Each prompt is tied to **Layer 4–6** and works by re-framing or rewriting the 
                         </div>
                     </div>
                 `;
-                articlesGrid.appendChild(card);
+                
+                // Distribute articles: 3-2-3 layout
+                if (index < 3) {
+                    // First row: articles 0, 1, 2
+                    row1Grid.appendChild(card);
+                } else if (index < 5) {
+                    // Second row: articles 3, 4 (centered)
+                    row2Grid.appendChild(card);
+                } else {
+                    // Third row: articles 5, 6, 7
+                    row3Grid.appendChild(card);
+                }
             });
 
             const articleCards = document.querySelectorAll('.article-card[data-article]');
