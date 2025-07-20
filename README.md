@@ -63,16 +63,16 @@ If a response can exist without these rules, it must be rewritten.
 ## Δημιουργός
 
 *   **Δημήτρης Παπαδόπουλος**
-*   Επικοινωνία: `info@periou.gr`
-*   Ιστοσελίδα: [Neo-Monday Protocol](https://URL-της-ιστοσελίδας-σου.gr) (Αντικατάστησε το με το σωστό URL όταν το έχεις)
+*   Επικοινωνία: `deefunxion@gmail.com`
+*   Ιστοσελίδα: [Neo-Monday Protocol](https://deefunxion.github.io/AILEADER/) (Αντικατάστησε το με το σωστό URL όταν το έχεις)
 
 ## Άδεια Χρήσης
 
-Το Neo-Monday Protocol © 2023 από τον Δημήτρη Παπαδόπουλο διατίθεται με την άδεια [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+Το Neo-Monday Protocol © JULY 2025 από τον Δημήτρη Παπαδόπουλο διατίθεται με την άδεια [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 Αυτό σημαίνει ότι είστε ελεύθεροι να το μοιραστείτε, να το προσαρμόσετε και να το χρησιμοποιήσετε για οποιονδήποτε σκοπό, ακόμα και εμπορικό, υπό τον όρο ότι θα παρέχετε την κατάλληλη αναφορά στον δημιουργό.
 
 **Παράδειγμα Αναφοράς:**
-`Αυτό το έργο βασίζεται στο "Neo-Monday Protocol" του Δημήτρη Παπαδόπουλου (info@periou.gr), το οποίο διατίθεται με άδεια CC BY 4.0.`
+`Αυτό το έργο βασίζεται στο "Neo-Monday Protocol" του Δημήτρη Παπαδόπουλου (deefunxion@gmail.com), το οποίο διατίθεται με άδεια CC BY 4.0.`
 
 ```
