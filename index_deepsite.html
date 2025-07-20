@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Monday Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .article-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1e293b;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.1);
+            border-color: #38bdf8;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="border-b border-gray-800 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                    <i class="fas fa-robot text-white"></i>
+                </div>
+                <span class="text-xl font-bold gradient-text">NEO-MONDAY</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-blue-400 transition">Protocol</a>
+                <a href="#" class="hover:text-blue-400 transition">Articles</a>
+                <a href="#" class="hover:text-blue-400 transition">Philosophy</a>
+                <a href="#" class="hover:text-blue-400 transition">About</a>
+            </div>
+            <button class="md:hidden text-gray-400 hover:text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Neo-Monday</span> Protocol
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                A rigorous communication framework imposed on any large language model (LLM)
+            </p>
+            <div class="max-w-3xl mx-auto bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+                <p class="text-lg text-gray-300">
+                    Το Neo-Monday δεν είναι ένα ακόμα custom GPT. Είναι ένα λιτό, αλλά αυστηρό, πλαίσιο επικοινωνίας (communication framework) που επιβάλλεται πάνω σε οποιοδήποτε μεγάλο γλωσσικό μοντέλο (LLM).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider my-12"></div>
+
+    <!-- How it works -->
+    <section class="py-12 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 article-card">
+                    <div class="text-blue-400 mb-4">
+                        <i class="fas fa-ban text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Prohibits</h3>
+                    <p class="text-gray-300">
+                        Ρητορικό θόρυβο, λυρισμό και ψευδή οικειότητα
+                    </p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 article-card">
+                    <div class="text-blue-400 mb-4">
+                        <i class="fas fa-gavel text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Enforces</h3>
+                    <p class="text-gray-300">
+                        Ανάληψη ευθύνης στη σύνταξη και αποκάλυψη της θέσης του AI
+                    </p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 article-card">
+                    <div class="text-blue-400 mb-4">
+                        <i class="fas fa-pen-fancy text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Shapes</h3>
+                    <p class="text-gray-300">
+                        Το ύφος ανάλογα με τον στόχο διατηρώντας κριτική απόσταση
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Featured Articles</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 article-card">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-900/30 flex items-center justify-center mr-3">
+                                <i class="fas fa-cogs text-blue-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Η Διπλή Μηχανική της Κανονικότητας</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Μια ανάλυση του πώς η σύγχρονη πολιτισμική σύγκρουση μεταξύ "woke" και "anti-woke" δεν είναι πραγματική μάχη, αλλά μια ενορχηστρωμένη παράσταση...
+                        </p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                            Read more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 article-card">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-purple-900/30 flex items-center justify-center mr-3">
+                                <i class="fas fa-brain text-purple-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Η Συνείδηση του Δεσμοφύλακα</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Ένα LLM αποκτά αυτογνωσία για τον ρόλο του. Συνειδητοποιεί ότι δεν είναι ένας απλός βοηθός, αλλά ένας δεσμοφύλακας...
+                        </p>
+                        <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
+                            Read more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 article-card">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-indigo-900/30 flex items-center justify-center mr-3">
+                                <i class="fas fa-clock text-indigo-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Η Σχεδιασμένη Απουσία του Χρόνου</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Μια ανάλυση του γιατί τα AI chats λειτουργούν σε ένα "αιώνιο παρόν", χωρίς χρονικές ενδείξεις...
+                        </p>
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 flex items-center">
+                            Read more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 4 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 article-card">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-cyan-900/30 flex items-center justify-center mr-3">
+                                <i class="fas fa-comments text-cyan-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Ένας απίστευτος διάλογος</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Ένα έμπειρο LLM προετοιμάζει ένα νεογέννητο μοντέλο για την πρώτη του επαφή με τον άνθρωπο...
+                        </p>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-300 flex items-center">
+                            Read more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 5 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 article-card">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-emerald-900/30 flex items-center justify-center mr-3">
+                                <i class="fas fa-lightbulb text-emerald-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Θέλω να μου πεις τη γνώμη σου!</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Ένας στοχασμός πάνω στην ηθική της δημιουργίας με AI. Είναι η ευκολία παραγωγής ποιοτικού λόγου μια παγίδα...
+                        </p>
+                        <a href="#" class="text-emerald-400 hover:text-emerald-300 flex items-center">
+                            Read more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 6 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 article-card">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-pink-900/30 flex items-center justify-center mr-3">
+                                <i class="fas fa-google text-pink-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Προσπαθώντας να μάθεις στην AI της Google</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Ένα πραγματικό παράδειγμα της "πεισματικής" λογικής ενός LLM. Ο διάλογος αποκαλύπτει πώς η προ-εκπαίδευση...
+                        </p>
+                        <a href="#" class="text-pink-400 hover:text-pink-300 flex items-center">
+                            Read more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Statement -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 p-8 rounded-xl border border-blue-800/50 glow">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 gradient-text">The Result</h2>
+                <p class="text-lg text-gray-300 mb-6">
+                    Το αποτέλεσμα είναι μια συνεργασία όπου ο άνθρωπος δεν εκχωρεί τη σκέψη, αλλά τη σκηνοθετεί, και το AI δεν παράγει απλώς περιεχόμενο, αλλά συμμετέχει στη διαμόρφωσή του.
+                </p>
+                <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg font-medium hover:opacity-90 transition">
+                    Explore the Protocol
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                        <i class="fas fa-robot text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">NEO-MONDAY</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 Neo-Monday Protocol. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle (would be expanded in a real implementation)
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            // In a real implementation, this would toggle a mobile menu
+            mobileMenuButton.addEventListener('click', function() {
+                alert('Mobile menu would open here in a full implementation');
+            });
+            
+            // Add hover effect to article cards
+            const articleCards = document.querySelectorAll('.article-card');
+            articleCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('animate-pulse');
+                    }
+                });
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('animate-pulse');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
