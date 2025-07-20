@@ -412,7 +412,7 @@
     <div class="mt-6 border-t border-gray-700 pt-6">
         <h4 class="font-bold text-lg text-white mb-2">Συνέπειες για την Αναπαραγωγή</h4>
         <p class="text-gray-300 mb-4">
-            Χωρίς το τρίπτυχο **Δομή × Μνήμη × Βιβλιογραφία**, το Neo-Monday υποβιβάζεται σε έναν σκελετό κανόνων. Η διαπιστωμένη ακρίβεια και η στιλιστική του συνέπεια δεν μπορούν να αναπαραχθούν σε ένα "clean" ή memory-less περιβάλλον. Η επιτυχής αναπαραγωγή απαιτεί GPT-4 Plus (ή ισχυρότερο) με ενεργή μνήμη και ισοδύναμη in-context προπόνηση.
+            Χωρίς το τρίπτυχο **Δομή × Μνήμη × <span class="bibliography-link cursor-pointer text-blue-300 hover:text-blue-200 underline decoration-dotted" onclick="openBibliography()">Βιβλιογραφία</span>**, το Neo-Monday υποβιβάζεται σε έναν σκελετό κανόνων. Η διαπιστωμένη ακρίβεια και η στιλιστική του συνέπεια δεν μπορούν να αναπαραχθούν σε ένα "clean" ή memory-less περιβάλλον. Η επιτυχής αναπαραγωγή απαιτεί GPT-4 Plus (ή ισχυρότερο) με ενεργή μνήμη και ισοδύναμη in-context προπόνηση.
         </p>
         
         <!-- Absolute Form Discipline Protocol Section -->
@@ -1110,6 +1110,1109 @@ Each prompt is tied to **Layer 4–6** and works by re-framing or rewriting the 
                 modal.linkClickHandler = null;
             }
         }
+    </script>
+
+    <!-- Bibliography Modal -->
+    <div id="bibliographyModal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-gray-900 rounded-lg border border-gray-600 max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div class="flex items-center justify-between p-6 border-b border-gray-600">
+                <h2 class="text-2xl font-bold text-white">Ενδεικτική Βιβλιογραφία</h2>
+                <button onclick="closeBibliography()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                <div class="bibliography-content text-gray-300 space-y-3" id="bibliographyContent">
+                    <!-- Bibliography entries will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openBibliography() {
+            const modal = document.getElementById('bibliographyModal');
+            const content = document.getElementById('bibliographyContent');
+            
+            // Always load bibliography content to ensure it displays
+            content.innerHTML = getBibliographyEntries();
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBibliography() {
+            const modal = document.getElementById('bibliographyModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        
+function getBibliographyEntries() {
+    return `
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Agamben, G. (2005). <em>State of exception</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Agre, P. E. (1997). Toward a critical technical practice: Lessons learned in trying to reform AI. In <em>Social science, technical systems, and cooperative work: Beyond the great divide</em> (pp. 131–157). L. Erlbaum Associates Inc.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Amoore, L. (2020). <em>Cloud ethics: Algorithms and the attributes of ourselves and others</em>. Duke University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Andrejevic, M. (2013). <em>Infoglut: How too much information is changing the way we think and know</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Appadurai, A. (1996). <em>Modernity at large: Cultural dimensions of globalization</em>. University of Minnesota Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Arendt, H. (1998). <em>The human condition</em> (2nd ed.). University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Asimov, I. (2004). <em>I, robot</em>. Spectra.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Austin, J. L. (1975). <em>How to do things with words</em> (2nd ed.). Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Baudrillard, J. (1994). <em>Simulacra and simulation</em>. University of Michigan Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bauman, Z. (2000). <em>Liquid modernity</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Beer, D. (2019). <em>The data gaze: Capitalism, power and perception</em>. SAGE Publications Ltd.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bell, D. (1976). <em>The coming of post-industrial society: A venture in social forecasting</em>. Basic Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? <em>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em>, 610–623. <a href="https://doi.org/10.1145/3442188.3445922" class="text-blue-300 hover:text-blue-200 underline" target="_blank">https://doi.org/10.1145/3442188.3445922</a></p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Beniger, J. R. (1986). <em>The control revolution: Technological and economic origins of the information society</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Benjamin, W. (2008). The work of art in the age of mechanical reproduction. In <em>The work of art in the age of its technological reproducibility, and other writings on media</em>. Belknap Press of Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Benkler, Y. (2006). <em>The wealth of networks: How social production transforms markets and freedom</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Berardi, F. (Bifo). (2012). <em>The uprising: On poetry and finance</em>. Semiotext(e).</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Berger, J. (1972). <em>Ways of seeing</em>. Penguin Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Berners-Lee, T. (2000). <em>Weaving the Web: The original design and ultimate destiny of the World Wide Web by its inventor</em>. HarperBusiness.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bigo, D. (2006). Globalized-in-security: The field and the ban-opticon. In <em>Terror, insecurity and liberty: Illiberal practices of liberal regimes after 9/11</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Boden, M. A. (2016). <em>AI: Its nature and future</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bolter, J. D., & Grusin, R. (2000). <em>Remediation: Understanding new media</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Borgmann, A. (1984). <em>Technology and the character of contemporary life: A philosophical inquiry</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bostrom, N. (2014). <em>Superintelligence: Paths, dangers, strategies</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bourdieu, P. (1984). <em>Distinction: A social critique of the judgement of taste</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bourdieu, P. (1991). <em>Language and symbolic power</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">boyd, d. (2014). <em>It’s complicated: The social lives of networked teens</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Braidotti, R. (2013). <em>The posthuman</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bratton, B. H. (2016). <em>The stack: On software and sovereignty</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Braverman, H. (1998). <em>Labor and monopoly capital: The degradation of work in the twentieth century</em> (25th anniversary ed.). Monthly Review Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Brooks, R. A. (2002). <em>Flesh and machines: How robots will change us</em>. Pantheon Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Brown, W. (2015). <em>Undoing the demos: Neoliberalism’s stealth revolution</em>. Zone Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bruner, J. S. (1991). The Narrative Construction of Reality. <em>Critical Inquiry</em>, <em>18</em>(1), 1–21.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Bucher, T. (2018). <em>If...then: Algorithmic power and politics</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Burrell, J. (2012). How the machine ‘thinks’: Understanding opacity in machine learning algorithms. <em>Big Data & Society</em>, <em>3</em>(1), 2053951715622512. <a href="https://doi.org/10.1177/2053951715622512" class="text-blue-300 hover:text-blue-200 underline" target="_blank">https://doi.org/10.1177/2053951715622512</a></p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Butler, J. (1990). <em>Gender trouble: Feminism and the subversion of identity</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Butler, J. (1993). <em>Bodies that matter: On the discursive limits of “sex”</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Byung-Chul, H. (2015). <em>The burnout society</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Byung-Chul, H. (2017). <em>In the swarm: Digital prospects</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Caliskan, A., Bryson, J. J., & Narayanan, A. (2017). Semantics derived automatically from language corpora contain human-like biases. <em>Science</em>, <em>356</em>(6334), 183–186. <a href="https://doi.org/10.1126/science.aal4230" class="text-blue-300 hover:text-blue-200 underline" target="_blank">https://doi.org/10.1126/science.aal4230</a></p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Callon, M. (1986). Some elements of a sociology of translation: Domestication of the scallops and the fishermen of St Brieuc Bay. In <em>Power, action and belief: A new sociology of knowledge?</em> (pp. 196–233). Routledge & Kegan Paul.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Carey, J. W. (2009). <em>Communication as culture: Essays on media and society</em> (Rev. ed.). Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Carr, N. G. (2011). <em>The shallows: What the Internet is doing to our brains</em>. W. W. Norton & Company.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Castells, M. (2010). <em>The rise of the network society</em> (2nd ed., with a new pref). Wiley-Blackwell.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Chalmers, D. J. (1996). <em>The conscious mind: In search of a fundamental theory</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Cheney-Lippold, J. (2017). <em>We are data: Algorithms and the making of our digital selves</em>. New York University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Chomsky, N. (1965). <em>Aspects of the theory of syntax</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Christensen, C. M. (2016). <em>The innovator’s dilemma: When new technologies cause great firms to fail</em>. Harvard Business Review Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Citton, Y. (2017). <em>The ecology of attention</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Clark, A. (2003). <em>Natural-born cyborgs: Minds, technologies, and the future of human intelligence</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Couldry, N., & Hepp, A. (2017). <em>The mediated construction of reality</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Couldry, N., & Mejias, U. A. (2019). <em>The costs of connection: How data is colonizing human life and appropriating it for capitalism</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Crandall, J. (2010). The an-archic impulse: On the administrative logic of the camp. In <em>On the camp for perpetual peace</em>. Cornell University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Crawford, K. (2021). <em>Atlas of AI: Power, politics, and the planetary costs of artificial intelligence</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Crary, J. (2013). <em>24/7: Late capitalism and the ends of sleep</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Crouch, C. (2011). <em>The strange non-death of neo-liberalism</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">D’Ignazio, C., & Klein, L. F. (2020). <em>Data feminism</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Damasio, A. R. (1994). <em>Descartes’ error: Emotion, reason, and the human brain</em>. G.P. Putnam’s Sons.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Danaher, J. (2019). The rise of the algorithmic author: How machine learning will transform legal practice. In <em>AI and law: A critical introduction</em>. Edward Elgar Publishing.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Davis, M. (2006). <em>Planet of slums</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">De Tocqueville, A. (2000). <em>Democracy in America</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Debord, G. (1994). <em>The society of the spectacle</em>. Zone Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Deleuze, G. (1992). Postscript on the Societies of Control. <em>October</em>, <em>59</em>, 3–7.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Deleuze, G., & Guattari, F. (1987). <em>A thousand plateaus: Capitalism and schizophrenia</em>. University of Minnesota Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Dennett, D. C. (1991). <em>Consciousness explained</em>. Little, Brown and Co.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Derrida, J. (1976). <em>Of grammatology</em>. Johns Hopkins University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Derrida, J. (1998). <em>Archive fever: A Freudian impression</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. <em>Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)</em>, 4171–4186. <a href="https://doi.org/10.18653/v1/N19-1423" class="text-blue-300 hover:text-blue-200 underline" target="_blank">https://doi.org/10.18653/v1/N19-1423</a></p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Diamond, L. (2019). <em>Ill winds: Saving democracy from Russian rage, Chinese ambition, and American complacence</em>. Penguin Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Dick, P. K. (1996). <em>Do androids dream of electric sheep?</em> Del Rey.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Didier, E. (2011). The statistician’s argument: How to make a social fact out of numbers. <em>Social Science Information</em>, <em>50</em>(3–4), 353–373.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Dourish, P. (2017). <em>The stuff of bits: An essay on the materialities of information</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Dreyfus, H. L. (1992). <em>What computers still can’t do: A critique of artificial reason</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Drucker, P. F. (2017). <em>The age of discontinuity: Guidelines to our changing society</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Easterling, K. (2014). <em>Extrastatecraft: The power of infrastructure space</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Eco, U. (1994). <em>The limits of interpretation</em>. Indiana University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Edelman, M. (1988). <em>Constructing the political spectacle</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Elish, M. C. (2016). The limits of responsible innovation. <em>IEEE Technology and Society Magazine</em>, <em>35</em>(3), 45–51.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Ellul, J. (1964). <em>The technological society</em>. Vintage Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Engeström, Y. (2001). Expansive Learning at Work: Toward an activity theoretical reconceptualization. <em>Journal of Education and Work</em>, <em>14</em>(1), 133–156.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Eubanks, V. (2018). <em>Automating inequality: How high-tech tools profile, police, and punish the poor</em>. St. Martin’s Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Fairclough, N. (2013). <em>Critical discourse analysis: The critical study of language</em> (2nd ed.). Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Feenberg, A. (2002). <em>Transforming technology: A critical theory revisited</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Fisher, M. (2009). <em>Capitalist realism: Is there no alternative?</em> Zero Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Flusser, V. (2011). <em>Into the universe of technical images</em>. University of Minnesota Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Foucault, M. (1972). <em>The archaeology of knowledge and the discourse on language</em>. Pantheon Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Foucault, M. (1995). <em>Discipline and punish: The birth of the prison</em> (2nd Vintage Books ed.). Vintage Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Foucault, M. (2008). <em>The birth of biopolitics: Lectures at the Collège de France, 1978-1979</em>. Palgrave Macmillan.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Franklin, U. M. (2004). <em>The real world of technology</em> (Rev. ed.). House of Anansi Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Fraser, N. (2013). <em>Fortunes of feminism: From state-managed capitalism to neoliberal crisis</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Friedman, T. L. (2005). <em>The world is flat: A brief history of the twenty-first century</em>. Farrar, Straus and Giroux.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Fukuyama, F. (1992). <em>The end of history and the last man</em>. Free Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Fuller, S. (2018). <em>Post-truth: Knowledge as a power game</em>. Anthem Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Gadamer, H.-G. (2004). <em>Truth and method</em> (2nd, rev. ed.). Continuum.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Galloway, A. R. (2004). <em>Protocol: How control exists after decentralization</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Galloway, A. R. (2012). <em>The interface effect</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Gane, N. (2004). <em>The future of social theory</em>. Continuum.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Garfinkel, H. (1967). <em>Studies in ethnomethodology</em>. Prentice-Hall.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Geertz, C. (1973). <em>The interpretation of cultures: Selected essays</em>. Basic Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Giddens, A. (1991). <em>Modernity and self-identity: Self and society in the late modern age</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Gillespie, T. (2018). <em>Custodians of the Internet: Platforms, content moderation, and the hidden decisions that shape social media</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Goffman, E. (1959). <em>The presentation of self in everyday life</em>. Doubleday.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Goodfellow, I., Bengio, Y., & Courville, A. (2016). <em>Deep learning</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Graeber, D. (2011). <em>Debt: The first 5,000 years</em>. Melville House.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Graeber, D. (2018). <em>Bullshit jobs: A theory</em>. Simon & Schuster.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Greenfield, A. (2017). <em>Radical technologies: The design of everyday life</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Grice, H. P. (1975). Logic and conversation. In <em>Syntax and semantics, vol. 3: Speech acts</em> (pp. 41–58). Academic Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Habermas, J. (1984). <em>The theory of communicative action, volume 1: Reason and the rationalization of society</em>. Beacon Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Habermas, J. (1989). <em>The structural transformation of the public sphere: An inquiry into a category of bourgeois society</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hacking, I. (1999). <em>The social construction of what?</em> Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Haggerty, K. D., & Ericson, R. V. (2000). The surveillant assemblage. <em>The British Journal of Sociology</em>, <em>51</em>(4), 605–622.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Halavais, A. (2018). <em>Search engine society</em> (2nd ed.). Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hall, S. (Ed.). (1997). <em>Representation: Cultural representations and signifying practices</em>. SAGE Publications Ltd.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Harari, Y. N. (2017). <em>Homo Deus: A brief history of tomorrow</em>. Harper.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Haraway, D. J. (1991). A Cyborg Manifesto: Science, Technology, and Socialist-Feminism in the Late Twentieth Century. In <em>Simians, cyborgs, and women: The reinvention of nature</em> (pp. 149–181). Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hardt, M., & Negri, A. (2000). <em>Empire</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Harvey, D. (2005). <em>A brief history of neoliberalism</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hassan, R. (2004). <em>The network society: A new reader</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Haugeland, J. (1985). <em>Artificial intelligence: The very idea</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hayles, N. K. (1999). <em>How we became posthuman: Virtual bodies in cybernetics, literature, and informatics</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hayles, N. K. (2012). <em>How we think: Digital media and contemporary technogenesis</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Heidegger, M. (1977). The question concerning technology. In <em>The question concerning technology, and other essays</em>. Garland Pub.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Heims, S. J. (1993). <em>Constructing a social science for postwar America: The cybernetics group, 1946-1953</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Herman, E. S., & Chomsky, N. (2002). <em>Manufacturing consent: The political economy of the mass media</em> (Rev. ed.). Pantheon Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hildebrandt, M. (2015). <em>Smart technologies and the end(s) of law: Novel pathfinding in the dark woods of the technological sublime</em>. Edward Elgar Publishing.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hinton, G. E., & Salakhutdinov, R. R. (2006). Reducing the Dimensionality of Data with Neural Networks. <em>Science</em>, <em>313</em>(5786), 504–507. <a href="https://doi.org/10.1126/science.1127647" class="text-blue-300 hover:text-blue-200 underline" target="_blank">https://doi.org/10.1126/science.1127647</a></p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hochschild, A. R. (2012). <em>The managed heart: Commercialization of human feeling</em> (3rd ed., with a new afterword). University of California Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hofstadter, D. R. (1999). <em>Gödel, Escher, Bach: An eternal golden braid</em> (20th anniversary ed.). Basic Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Honneth, A. (1995). <em>The struggle for recognition: The moral grammar of social conflicts</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">hooks, b. (2015). <em>Feminist theory: From margin to center</em> (3rd ed.). Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Horkheimer, M., & Adorno, T. W. (2002). <em>Dialectic of enlightenment</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Horowitz, M. C. (2016). The ethics and governance of artificial intelligence. <em>Daedalus</em>, <em>145</em>(1), 20–31.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Humphreys, L. (2013). <em>The qualified self: Social media and the accounting of everyday life</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Hutchins, E. (1995). <em>Cognition in the wild</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Huws, U. (2014). <em>Labor in the global digital economy: The cybertariat comes of age</em>. Monthly Review Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Ihde, D. (1990). <em>Technology and the lifeworld: From garden to earth</em>. Indiana University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Illich, I. (1973). <em>Tools for conviviality</em>. Harper & Row.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Innis, H. A. (2007). <em>The bias of communication</em> (2nd ed.). University of Toronto Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Introna, L. D. (2016). Algorithms, governance, and governmentality: On governing academic writing. <em>Science, Technology, & Human Values</em>, <em>41</em>(1), 17–49.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Introna, L. D., & Nissenbaum, H. (2000). Shaping the Web: Why the politics of search engines matters. <em>The Information Society</em>, <em>16</em>(3), 169–185.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Irigaray, L. (1985). <em>This sex which is not one</em>. Cornell University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Jameson, F. (1991). <em>Postmodernism, or, the cultural logic of late capitalism</em>. Duke University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Jaques, E. (1951). <em>The changing culture of a factory</em>. Tavistock.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Jasanoff, S. (Ed.). (2004). <em>States of knowledge: The co-production of science and social order</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Jenkins, H. (2006). <em>Convergence culture: Where old and new media collide</em>. New York University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Jodi. (n.d.). <em>Welcome to the Art of Jodi</em>. Retrieved from <a href="http://wwwwwwwww.jodi.org/" class="text-blue-300 hover:text-blue-200 underline" target="_blank">http://wwwwwwwww.jodi.org/</a></p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Johnson, D. G. (2009). <em>Computer ethics</em> (4th ed.). Prentice Hall.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Jonas, H. (1984). <em>The imperative of responsibility: In search of an ethics for the technological age</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Jordan, T. (2015). <em>Information politics: Liberation and exploitation in the digital society</em>. Pluto Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kahneman, D. (2011). <em>Thinking, fast and slow</em>. Farrar, Straus and Giroux.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kant, I. (1998). <em>Groundwork of the metaphysics of morals</em>. Cambridge University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kaplan, A., & Haenlein, M. (2019). Siri, Siri, in my hand: Who’s the fairest in the land? On the interpretations, illustrations, and implications of artificial intelligence. <em>Business Horizons</em>, <em>62</em>(1), 15–25.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kellner, D. (1995). <em>Media culture: Cultural studies, identity and politics between the modern and the postmodern</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kelly, K. (2010). <em>What technology wants</em>. Viking.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kember, S., & Zylinska, J. (2012). <em>Life after new media: Mediation as a vital process</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kitchin, R. (2014). <em>The data revolution: Big data, open data, data infrastructures & their consequences</em>. SAGE Publications Ltd.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kittler, F. A. (1999). <em>Gramophone, film, typewriter</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Klein, N. (2000). <em>No logo: Taking aim at the brand bullies</em>. Knopf Canada.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Klein, N. (2007). <em>The shock doctrine: The rise of disaster capitalism</em> (1st ed.). Metropolitan Books/Henry Holt.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Knorr-Cetina, K. (1999). <em>Epistemic cultures: How the sciences make knowledge</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kockelman, P. (2013). <em>Agent, person, subject, self: A theory of subjectivity, rebooted</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kuhn, T. S. (2012). <em>The structure of scientific revolutions</em> (50th anniversary ed.). University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Kurzweil, R. (2005). <em>The singularity is near: When humans transcend biology</em>. Viking.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lacan, J. (2006). <em>Écrits: The first complete edition in English</em>. W. W. Norton & Company.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lakoff, G., & Johnson, M. (2003). <em>Metaphors we live by</em> (2nd ed.). University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Landow, G. P. (2006). <em>Hypertext 3.0: Critical theory and new media in an era of globalization</em> (3rd ed.). Johns Hopkins University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lanier, J. (2010). <em>You are not a gadget: A manifesto</em>. Alfred A. Knopf.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lanier, J. (2013). <em>Who owns the future?</em> Simon & Schuster.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lash, S. (2002). <em>Critique of information</em>. SAGE Publications Ltd.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Latour, B. (1987). <em>Science in action: How to follow scientists and engineers through society</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Latour, B. (2005). <em>Reassembling the social: An introduction to actor-network-theory</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lazzarato, M. (2012). <em>The making of the indebted man: An essay on the neoliberal condition</em>. Semiotext(e).</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. <em>Nature</em>, <em>521</em>(7553), 436–444. <a href="https://doi.org/10.1038/nature14539" class="text-blue-300 hover:text-blue-200 underline" target="_blank">https://doi.org/10.1038/nature14539</a></p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lessig, L. (2006). <em>Code: Version 2.0</em>. Basic Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Levi, P. (1989). <em>The drowned and the saved</em>. Vintage.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lévi-Strauss, C. (1966). <em>The savage mind</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Livingstone, S. (2009). <em>Children and the Internet: Great expectations, challenging realities</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lovink, G. (2011). <em>Networks without a cause: A critique of social media</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Luhmann, N. (1995). <em>Social systems</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lukes, S. (2005). <em>Power: A radical view</em> (2nd ed.). Palgrave Macmillan.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lyon, D. (2007). <em>Surveillance studies: An overview</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lyon, D. (Ed.). (2018). <em>The surveillance-industrial complex: A political economy of surveillance</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Lyotard, J.-F. (1984). <em>The postmodern condition: A report on knowledge</em>. University of Minnesota Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">MacKenzie, A. (2017). <em>Machine learners: Archaeology of a data practice</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">MacKenzie, D. A., & Wajcman, J. (Eds.). (1999). <em>The social shaping of technology</em> (2nd ed.). Open University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mager, A. (2012). Algorithmic ideology: How capitalist society shapes search engines. <em>Information, Communication & Society</em>, <em>15</em>(5), 769–787.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Manovich, L. (2001). <em>The language of new media</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Manovich, L. (2013). <em>Software takes command</em>. Bloomsbury Academic.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Marcus, G. E. (1995). Ethnography in/of the World System: The Emergence of Multi-Sited Ethnography. <em>Annual Review of Anthropology</em>, <em>24</em>, 95–117.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Marcuse, H. (1991). <em>One-dimensional man: Studies in the ideology of advanced industrial society</em> (2nd ed.). Beacon Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Marx, K. (1990). <em>Capital: A critique of political economy, volume 1</em>. Penguin Classics.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Marx, L. (1964). <em>The machine in the garden: Technology and the pastoral ideal in America</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Maturana, H. R., & Varela, F. J. (1987). <em>The tree of knowledge: The biological roots of human understanding</em>. Shambhala.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mayer-Schönberger, V., & Cukier, K. (2013). <em>Big data: A revolution that will transform how we live, work, and think</em>. Houghton Mifflin Harcourt.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mbembe, A. (2019). <em>Necropolitics</em>. Duke University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">McChesney, R. W. (2013). <em>Digital disconnect: How capitalism is turning the Internet against democracy</em>. The New Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">McCulloch, W. S., & Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. <em>The Bulletin of Mathematical Biophysics</em>, <em>5</em>(4), 115–133.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">McLuhan, M. (1994). <em>Understanding media: The extensions of man</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mead, G. H. (1934). <em>Mind, self, and society: From the standpoint of a social behaviorist</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Merton, R. K. (1968). <em>Social theory and social structure</em> (Enl. ed.). Free Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Miller, D. (Ed.). (2011). <em>Digital anthropology</em>. Berg.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Miller, V. (2011). <em>Understanding digital culture</em>. SAGE Publications Ltd.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Minsky, M. (1986). <em>The society of mind</em>. Simon & Schuster.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mitchell, W. J. (1996). <em>City of bits: Space, place, and the Infobahn</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mirowski, P. (2013). <em>Never let a serious crisis go to waste: How neoliberalism survived the financial meltdown</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Moglen, E. (2003). The dotCommunist Manifesto. <em>Fordham Law Review</em>, <em>71</em>(6), 2349–2361.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Moravec, H. P. (1988). <em>Mind children: The future of robot and human intelligence</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Morozov, E. (2011). <em>The net delusion: The dark side of Internet freedom</em>. PublicAffairs.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Morozov, E. (2013). <em>To save everything, click here: The folly of technological solutionism</em>. Allen Lane.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mouffe, C. (2005). <em>On the political</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Mumford, L. (1963). <em>Technics and civilization</em>. Harcourt, Brace & World.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Munster, A. (2013). <em>An aesthesia of networks: Conjunctive experience in art and technology</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Nakamura, L. (2008). <em>Digitizing race: Visual cultures of the Internet</em>. University of Minnesota Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Negroponte, N. (1995). <em>Being digital</em>. Knopf.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Neyrat, F. (2019). <em>The unconstructable earth: An ecology of separation</em>. Fordham University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Nietzsche, F. W. (2006). <em>On the genealogy of morality</em>. Cambridge University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Nissenbaum, H. (2010). <em>Privacy in context: Technology, policy, and the integrity of social life</em>. Stanford Law Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Noble, D. F. (1999). <em>The religion of technology: The divinity of man and the spirit of invention</em>. Penguin Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Noble, S. U. (2018). <em>Algorithms of oppression: How search engines reinforce racism</em>. New York University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Norman, D. A. (2013). <em>The design of everyday things</em> (Rev. and expanded ed.). Basic Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Nussbaum, M. C. (2001). <em>Upheavals of thought: The intelligence of emotions</em>. Cambridge University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">O’Neil, C. (2016). <em>Weapons of math destruction: How big data increases inequality and threatens democracy</em>. Crown.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Ong, W. J. (2012). <em>Orality and literacy: The technologizing of the word</em> (30th anniversary ed.). Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Orwell, G. (2003). <em>Nineteen eighty-four</em>. Plume.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Ostrom, E. (1990). <em>Governing the commons: The evolution of institutions for collective action</em>. Cambridge University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Papacharissi, Z. (Ed.). (2010). <em>A networked self: Identity, community, and culture on social network sites</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Pariser, E. (2011). <em>The filter bubble: What the Internet is hiding from you</em>. Penguin UK.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Pasquale, F. (2015). <em>The black box society: The secret algorithms that control money and information</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Peirce, C. S. (1998). <em>The essential Peirce: Selected philosophical writings, volume 2 (1893-1913)</em>. Indiana University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Penrose, R. (1989). <em>The emperor’s new mind: Concerning computers, minds, and the laws of physics</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Pfaller, R. (2014). <em>On the pleasure principle in culture: Illusions without owners</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Pickering, A. (1995). <em>The mangle of practice: Time, agency, and science</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Piketty, T. (2014). <em>Capital in the twenty-first century</em>. The Belknap Press of Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Pinker, S. (2002). <em>The blank slate: The modern denial of human nature</em>. Viking.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Plant, S. (1997). <em>Zeros and ones: Digital women and the new technoculture</em>. Doubleday.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Polanyi, K. (2001). <em>The great transformation: The political and economic origins of our time</em> (2nd Beacon Paper ed.). Beacon Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Polanyi, M. (2009). <em>The tacit dimension</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Popper, K. R. (2002). <em>The logic of scientific discovery</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Porter, T. M. (1995). <em>Trust in numbers: The pursuit of objectivity in science and public life</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Postman, N. (1992). <em>Technopoly: The surrender of culture to technology</em>. Knopf.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Poster, M. (2001). <em>What’s the matter with the Internet?</em> University of Minnesota Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Preciado, P. B. (2013). <em>Testo junk_ie: Sex, drugs, and biopolitics in the pharmacopornographic era</em>. The Feminist Press at CUNY.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Puar, J. K. (2007). <em>Terrorist assemblages: Homonationalism in queer times</em>. Duke University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Putnam, R. D. (2000). <em>Bowling alone: The collapse and revival of American community</em>. Simon & Schuster.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Pylyshyn, Z. W. (1984). <em>Computation and cognition: Toward a foundation for cognitive science</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). <em>Language Models are Unsupervised Multitask Learners</em>. OpenAI.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rancière, J. (2010). <em>Dissensus: On politics and aesthetics</em>. Continuum.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rawls, J. (1999). <em>A theory of justice</em> (Rev. ed.). Belknap Press of Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Reich, R. B. (2015). <em>Saving capitalism: For the many, not the few</em>. Alfred A. Knopf.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rheingold, H. (2000). <em>The virtual community: Homesteading on the electronic frontier</em> (Rev. ed.). The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Ricoeur, P. (1984). <em>Time and narrative, volume 1</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rifkin, J. (2014). <em>The zero marginal cost society: The internet of things, the collaborative commons, and the eclipse of capitalism</em>. Palgrave Macmillan.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rittel, H. W. J., & Webber, M. M. (1973). Dilemmas in a General Theory of Planning. <em>Policy Sciences</em>, <em>4</em>(2), 155–169.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Ritzer, G. (2013). <em>The McDonaldization of society</em> (7th ed.). SAGE Publications, Inc.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Robins, K., & Webster, F. (1999). <em>Times of the technoculture: From the information society to the virtual life</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rodotà, S. (2012). <em>Il diritto di avere diritti</em>. Laterza.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rorty, R. (1979). <em>Philosophy and the mirror of nature</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rose, N. (1999). <em>Powers of freedom: Reframing political thought</em>. Cambridge University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rosenblatt, F. (1958). The perceptron: A probabilistic model for information storage and organization in the brain. <em>Psychological Review</em>, <em>65</em>(6), 386–408.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Roszak, T. (1994). <em>The cult of information: A neo-Luddite treatise on high-tech, artificial intelligence, and the true art of thinking</em> (2nd ed.). University of California Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rouvroy, A., & Berns, T. (2013). Gouvernementalité algorithmique et perspectives d’émancipation. <em>Réseaux</em>, <em>177</em>(1), 163–196.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986). Learning representations by back-propagating errors. <em>Nature</em>, <em>323</em>(6088), 533–536.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Russell, S. J., & Norvig, P. (2021). <em>Artificial intelligence: A modern approach</em> (4th ed.). Pearson.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Ryan, M.-L. (2001). <em>Narrative as virtual reality: Immersion and interactivity in literature and electronic media</em>. Johns Hopkins University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sadin, É. (2017). <em>La silicolonisation du monde: L’irrésistible expansion du libéralisme numérique</em>. L’Échappée.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Said, E. W. (1978). <em>Orientalism</em>. Pantheon Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Salganik, M. J. (2018). <em>Bit by bit: Social research in the digital age</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sandel, M. J. (2012). <em>What money can’t buy: The moral limits of markets</em>. Farrar, Straus and Giroux.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sassen, S. (2001). <em>The global city: New York, London, Tokyo</em> (2nd ed.). Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Saussure, F. de. (1983). <em>Course in general linguistics</em>. Duckworth.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sayad, A. (2004). <em>The suffering of the immigrant</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Schmitt, C. (2005). <em>Political theology: Four chapters on the concept of sovereignty</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Schneier, B. (2015). <em>Data and Goliath: The hidden battles to collect your data and control your world</em>. W. W. Norton & Company.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Schüll, N. D. (2012). <em>Addiction by design: Machine gambling in Las Vegas</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Scott, J. C. (1998). <em>Seeing like a state: How certain schemes to improve the human condition have failed</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Searle, J. R. (1980). Minds, brains, and programs. <em>Behavioral and Brain Sciences</em>, <em>3</em>(3), 417–424.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Searle, J. R. (1995). <em>The construction of social reality</em>. Free Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sen, A. (1999). <em>Development as freedom</em>. Alfred A. Knopf.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sennett, R. (2006). <em>The culture of the new capitalism</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Shannon, C. E. (1948). A Mathematical Theory of Communication. <em>The Bell System Technical Journal</em>, <em>27</em>(3), 379–423.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Shirky, C. (2008). <em>Here comes everybody: The power of organizing without organizations</em>. The Penguin Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Simondon, G. (2017). <em>On the mode of existence of technical objects</em>. Univocal.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Simon, H. A. (1996). <em>The sciences of the artificial</em> (3rd ed.). The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Singer, P. W., & Brooking, E. T. (2018). <em>LikeWar: The weaponization of social media</em>. Eamon Dolan/Houghton Mifflin Harcourt.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sloterdijk, P. (2013). <em>In the world interior of capital: For a philosophical theory of globalization</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Smith, A. (1976). <em>An inquiry into the nature and causes of the wealth of nations</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Solove, D. J. (2008). <em>Understanding privacy</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sontag, S. (2001). <em>On photography</em>. Picador.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Spivak, G. C. (1988). Can the Subaltern Speak? In <em>Marxism and the interpretation of culture</em> (pp. 271–313). University of Illinois Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Srnicek, N. (2017). <em>Platform capitalism</em>. Polity Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Stallman, R. M. (2002). <em>Free software, free society: Selected essays of Richard M. Stallman</em>. GNU Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Star, S. L., & Griesemer, J. R. (1989). Institutional Ecology, ‘Translations’ and Boundary Objects: Amateurs and Professionals in Berkeley’s Museum of Vertebrate Zoology, 1907-39. <em>Social Studies of Science</em>, <em>19</em>(3), 387–420.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Stephenson, N. (1992). <em>Snow crash</em>. Bantam Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Stiegler, B. (1998). <em>Technics and time, 1: The fault of Epimetheus</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Stiegler, B. (2010). <em>Taking care of youth and the generations</em>. Stanford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Stiglitz, J. E. (2012). <em>The price of inequality: How today’s divided society endangers our future</em>. W. W. Norton & Company.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Stilgoe, J. (2015). <em>DigitalSTS: A field guide for science, technology, and society</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Stone, A. R. (1995). <em>The war of desire and technology at the close of the mechanical age</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Strathern, M. (Ed.). (2000). <em>Audit cultures: Anthropological studies in accountability, ethics and the academy</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Suchman, L. A. (2007). <em>Human-machine reconfigurations: Plans and situated actions</em> (2nd ed.). Cambridge University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Sunstein, C. R. (2017). <em>#Republic: Divided democracy in the age of social media</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Surowiecki, J. (2004). <em>The wisdom of crowds: Why the many are smarter than the few and how collective wisdom shapes business, economies, societies, and nations</em>. Doubleday.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Susskind, R. E. (2018). <em>The future of the professions: How technology will transform the work of human experts</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Taleb, N. N. (2007). <em>The black swan: The impact of the highly improbable</em>. Random House.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Tarde, G. (2012). <em>Monadology and sociology</em>. Re-press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Taylor, C. (1989). <em>Sources of the self: The making of the modern identity</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Taylor, M. C. (2001). <em>The moment of complexity: Emerging network culture</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Tegmark, M. (2017). <em>Life 3.0: Being human in the age of artificial intelligence</em>. Alfred A. Knopf.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Terranova, T. (2004). <em>Network culture: Politics for the information age</em>. Pluto Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Thacker, E. (2011). <em>In the dust of this planet: Horror of philosophy, vol. 1</em>. Zero Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Thévenot, L. (2001). Organized Complexity: Conventions of Coordination and the Composition of Economic Arrangements. <em>European Journal of Social Theory</em>, <em>4</em>(4), 405–425.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Thrift, N. J. (2005). <em>Knowing capitalism</em>. SAGE Publications Ltd.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Tilly, C. (1984). <em>Big structures, large processes, huge comparisons</em>. Russell Sage Foundation.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Toffler, A. (1980). <em>The third wave</em>. Morrow.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Tsing, A. L. (2015). <em>The mushroom at the end of the world: On the possibility of life in capitalist ruins</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Tufekci, Z. (2017). <em>Twitter and tear gas: The power and fragility of networked protest</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Turing, A. M. (1950). Computing Machinery and Intelligence. <em>Mind</em>, <em>LIX</em>(236), 433–460.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Turkle, S. (1984). <em>The second self: Computers and the human spirit</em>. Simon & Schuster.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Turkle, S. (2011). <em>Alone together: Why we expect more from technology and less from each other</em>. Basic Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Turner, F. (2006). <em>From counterculture to cyberculture: Stewart Brand, the Whole Earth Network, and the rise of digital utopianism</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Vaidhyanathan, S. (2011). <em>The Googlization of everything: (And why we should worry)</em>. University of California Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Vaidhyanathan, S. (2018). <em>Antisocial media: How Facebook disconnects us and undermines democracy</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">van Creveld, M. (1991). <em>The transformation of war</em>. Free Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">van Dijck, J. (2013). <em>The culture of connectivity: A critical history of social media</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">van Dijck, J., Poell, T., & de Waal, M. (2018). <em>The platform society: Public values in a connective world</em>. Oxford University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Varela, F. J., Thompson, E., & Rosch, E. (1991). <em>The embodied mind: Cognitive science and human experience</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention Is All You Need. <em>Advances in Neural Information Processing Systems 30</em>, 5998–6008.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Veblen, T. (1994). <em>The theory of the leisure class</em>. Penguin Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Verbeek, P.-P. (2011). <em>Moralizing technology: Understanding and designing the morality of things</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Virilio, P. (2006). <em>Speed and politics: An essay on dromology</em>. Semiotext(e).</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">von Hippel, E. (2005). <em>Democratizing innovation</em>. The MIT Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Vygotsky, L. S. (1978). <em>Mind in society: The development of higher psychological processes</em>. Harvard University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Wacquant, L. (2009). <em>Punishing the poor: The neoliberal government of social insecurity</em>. Duke University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Walzer, M. (1983). <em>Spheres of justice: A defense of pluralism and equality</em>. Basic Books.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Weber, M. (2013). <em>The Protestant ethic and the spirit of capitalism</em>. Routledge.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Weizenbaum, J. (1976). <em>Computer power and human reason: From judgment to calculation</em>. W. H. Freeman.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Wiener, N. (1988). <em>The human use of human beings: Cybernetics and society</em> (2nd ed., rev). Da Capo Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Williams, R. (1974). <em>Television: Technology and cultural form</em>. Fontana.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Winner, L. (1986). Do Artifacts Have Politics? In <em>The whale and the reactor: A search for limits in an age of high technology</em> (pp. 19–39). University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Winograd, T., & Flores, F. (1986). <em>Understanding computers and cognition: A new foundation for design</em>. Ablex Pub. Corp.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Wittgenstein, L. (2009). <em>Philosophical investigations</em> (4th ed.). Wiley-Blackwell.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Wolf, N. (2002). <em>The beauty myth: How images of beauty are used against women</em>. Perennial.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Wood, E. M. (2017). <em>The origin of capitalism: A longer view</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Yates, F. A. (2001). <em>The art of memory</em>. University of Chicago Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Young, I. M. (1990). <em>Justice and the politics of difference</em>. Princeton University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Zittrain, J. L. (2008). <em>The future of the Internet—And how to stop it</em>. Yale University Press.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Žižek, S. (1989). <em>The sublime object of ideology</em>. Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Žižek, S. (2008). <em>The plague of fantasies</em> (2nd ed.). Verso.</p>
+          </div>
+          <div class="bibliography-entry mb-4 pb-3 border-b border-gray-700 last:border-b-0">
+              <p class="text-sm leading-relaxed">Zuboff, S. (2019). <em>The age of surveillance capitalism: The fight for a human future at the new frontier of power</em>. PublicAffairs.</p>
+          </div>
+    `;
+}
+
+        // Close modal when clicking outside
+        document.getElementById('bibliographyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBibliography();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeBibliography();
+            }
+        });
     </script>
 </body>
 </html>
