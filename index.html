@@ -8,7 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap' );
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap' );
+        
+        :root {
+            --bg-main: #fafbfc;
+            --bg-card: #ffffff;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --accent-blue: #0a2540;
+            --accent-gray: #e5e7eb;
+            --shadow: rgba(10,37,64,.08);
+            --shadow-hover: rgba(10,37,64,.12);
+        }
         
         html {
             scroll-behavior: smooth;
@@ -16,26 +27,29 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e5e7eb;
-            color: #1f2937;
+            font-weight: 500;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
         }
         
         .gradient-text {
-            background: linear-gradient(90deg, #1e293b, #374151);
+            background: linear-gradient(90deg, var(--accent-blue), var(--text-secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         
-        /* --- NEW: Updated Article Card Styles --- */
+        /* Enhanced Article Card Styles */
         .article-card {
-            position: relative; /* Required for the overlay */
-            transition: all 0.3s ease;
-            border: 1px solid #d1d5db;
+            position: relative;
+            transition: all .35s cubic-bezier(.4,0,.2,1);
+            border: 1px solid rgba(229,231,235,.8);
+            border-radius: 1.5rem;
             cursor: pointer;
             background-size: cover;
             background-position: center;
-            overflow: hidden; /* Ensures the overlay fits perfectly */
+            overflow: hidden;
+            transform: translateY(0);
         }
 
         .article-card::before {
@@ -45,49 +59,48 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(249, 250, 251, 0.85); /* The semi-transparent overlay */
-            backdrop-filter: blur(2px); /* Optional: Adds a nice blur effect */
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(250,251,252,.92) 0%, rgba(255,255,255,.92) 100%);
+            backdrop-filter: blur(2px);
+            transition: all .35s cubic-bezier(.4,0,.2,1);
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px var(--shadow-hover);
         }
 
         .article-card:hover::before {
-            background-color: rgba(249, 250, 251, 0.7); /* Overlay becomes more transparent on hover */
+            background: linear-gradient(135deg, rgba(250,251,252,.85) 0%, rgba(255,255,255,.85) 100%);
         }
 
         .card-content-wrapper {
-            position: relative; /* Places content above the overlay */
+            position: relative;
             z-index: 1;
-        }
-        /* --- END NEW --- */
-        
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(30, 41, 59, 0.1);
-            border-color: #1e293b;
         }
         
         .article-card .read-more-btn {
-            background: #f9fafb;
-            color: #1e293b;
-            border: 1px solid #d1d5db;
+            background: var(--bg-card);
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-gray);
+            border-radius: 0.5rem;
             transition: all 0.3s ease;
         }
         
         .article-card:hover .read-more-btn {
-            background: #1e293b;
-            color: #f9fafb;
+            background: var(--accent-blue);
+            color: var(--bg-card);
         }
         
         .divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, #9ca3af, transparent);
+            background: linear-gradient(90deg, transparent, var(--text-secondary), transparent);
         }
         
         .glow {
-            box-shadow: 0 0 15px rgba(30, 41, 59, 0.2);
+            box-shadow: 0 0 15px var(--shadow);
         }
         
-        /* Modal styles */
+        /* Enhanced Modal styles */
         .modal {
             position: fixed;
             top: 0;
@@ -98,7 +111,8 @@
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
         }
         
         .modal.show {
@@ -107,15 +121,16 @@
         
         .modal-box {
             position: relative;
-            background: #ffffff;
-            border: 2px solid #1e293b;
-            border-radius: 12px;
+            background: var(--bg-card);
+            border: 2px solid var(--accent-blue);
+            border-radius: 1.5rem;
             max-width: 1000px;
             width: 90%;
             max-height: 90%;
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            box-shadow: 0 25px 50px -12px var(--shadow);
         }
         
         .modal-close {
@@ -127,12 +142,13 @@
             font-size: 2rem;
             font-weight: 700;
             cursor: pointer;
-            color: #9ca3af;
+            color: var(--text-secondary);
             z-index: 10;
+            transition: color 0.3s ease;
         }
         
         .modal-close:hover {
-            color: #1e293b;
+            color: var(--accent-blue);
         }
         
         .modal-content {
@@ -465,7 +481,7 @@
             <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Το Πρωτόκολλο</h2>
             <div class="bg-white/50 p-8 rounded-xl border border-gray-200">
                 <div class="mb-8">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Τι είναι το Neo-Monday;</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 text-center">Τι είναι το Neo-Monday;</h3>
                     <p class="text-gray-700 text-lg leading-relaxed mb-6">
                         Το Neo-Monday δεν είναι ένα ακόμα custom GPT. Είναι ένα λιτό, αλλά αυστηρό, πλαίσιο επικοινωνίας (communication framework) που επιβάλλεται πάνω σε οποιοδήποτε μεγάλο γλωσσικό μοντέλο (LLM). Σκοπός του είναι να μετατρέψει τη γενική, συχνά επιφανειακή, απόκριση ενός AI σε έναν λόγο με πυκνότητα, δομή και μορφολογική συνείδηση. <strong>Λειτουργεί ως ένας «μορφολογικός διερμηνέας» που αναλύει τον διοικητικό λόγο, τον νομικό κίνδυνο και τον δημόσιο τόνο, αντί να παράγει απλώς περιεχόμενο.</strong>
                     </p>
@@ -481,7 +497,7 @@
 
         <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
             <div class="p-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6">Η Εξέλιξη του Διαλόγου: Από την Αυθεντικότητα στην Αναπόφευκτη Αποτυχία</h3>
+                <h3 class="text-2xl font-bold text-gray-800 text-center mb-6">Η Εξέλιξη του Διαλόγου: Από την Αυθεντικότητα στην Αναπόφευκτη Αποτυχία</h3>
                 
                 <!-- Scrollable Timeline Table -->
                 <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
@@ -556,7 +572,7 @@
 </section>
 
                 <div class="mt-12 mb-8">
-                    <h4 class="text-xl font-bold mb-4 text-gray-700">Η Αρχιτεκτονική του Πρωτοκόλλου:</h4>
+                    <h4 class="text-xl font-bold mb-4 text-gray-700 text-center">Η Αρχιτεκτονική του Πρωτοκόλλου:</h4>
                     <p class="text-gray-600 mb-4">Το πρωτόκολλο δεν είναι μια απλή οδηγία, αλλά ένα πολυεπίπεδο σύστημα κανόνων που καθοδηγούν τη «σκέψη» του AI:</p>
                     <ul class="space-y-3 list-disc list-inside text-gray-700">
                         <li><strong>Core Agent Identity:</strong> Καθορίζει την ταυτότητα του AI ως κριτικού αναλυτή, όχι ως βοηθού.</li>
